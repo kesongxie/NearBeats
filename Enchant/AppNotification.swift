@@ -11,4 +11,7 @@ import Foundation
 struct  AppNotification{
     static let AppWillEnterForegroundNotificationName = Notification.Name("AppWillEnterForegroundNotification")
 
+    static let AVPlayerItemDidPlayToEndTimeNotificationName = Notification.Name("AVPlayerItemDidPlayToEndTimeNotification")
 }
+
+

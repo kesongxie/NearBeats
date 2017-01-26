@@ -36,5 +36,10 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>Record a short video</string>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+    </dict>
 </dict>
 </plist>

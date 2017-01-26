@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71C3889F505F37A0F82A483F /* Pods_Enchant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 260E0107C673263FE8B9FAAE /* Pods_Enchant.framework */; };
 		986F34441E35CD8A001BB184 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986F34431E35CD8A001BB184 /* AppDelegate.swift */; };
 		986F34461E35CD8A001BB184 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986F34451E35CD8A001BB184 /* CaptureViewController.swift */; };
 		986F34491E35CD8A001BB184 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 986F34471E35CD8A001BB184 /* Main.storyboard */; };
@@ -18,9 +19,12 @@
 		98D28E2B1E36C7DC00584CB1 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D28E271E36C7DC00584CB1 /* App.swift */; };
 		98D28E2D1E372EE200584CB1 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D28E2C1E372EE200584CB1 /* PlayerView.swift */; };
 		98D5ABF81E36B12400FB2B07 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D5ABF71E36B12400FB2B07 /* UIViewExtension.swift */; };
+		98EFAFB41E3878C200629289 /* Ultility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFAFB31E3878C200629289 /* Ultility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		260E0107C673263FE8B9FAAE /* Pods_Enchant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Enchant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57E0E0E86DECBEEF23494BD9 /* Pods-Enchant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Enchant.release.xcconfig"; path = "Pods/Target Support Files/Pods-Enchant/Pods-Enchant.release.xcconfig"; sourceTree = "<group>"; };
 		986F34401E35CD8A001BB184 /* Enchant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Enchant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		986F34431E35CD8A001BB184 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		986F34451E35CD8A001BB184 /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +38,8 @@
 		98D28E271E36C7DC00584CB1 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		98D28E2C1E372EE200584CB1 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		98D5ABF71E36B12400FB2B07 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		98EFAFB31E3878C200629289 /* Ultility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ultility.swift; sourceTree = "<group>"; };
+		A19D911A0874661D1F3F0211 /* Pods-Enchant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Enchant.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Enchant/Pods-Enchant.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71C3889F505F37A0F82A483F /* Pods_Enchant.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +59,8 @@
 			children = (
 				986F34421E35CD8A001BB184 /* Enchant */,
 				986F34411E35CD8A001BB184 /* Products */,
+				E76671FD8F8960BA1752FFA4 /* Pods */,
+				FE1126326990901688FDB3BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +94,7 @@
 				98D28E241E36C7DC00584CB1 /* StorybordIdentifier.swift */,
 				98D28E251E36C7DC00584CB1 /* SegueIdentifier.swift */,
 				98D28E261E36C7DC00584CB1 /* AppNotification.swift */,
+				98EFAFB31E3878C200629289 /* Ultility.swift */,
 				98D28E271E36C7DC00584CB1 /* App.swift */,
 			);
 			name = Macro;
@@ -98,6 +108,23 @@
 			name = Extension;
 			sourceTree = "<group>";
 		};
+		E76671FD8F8960BA1752FFA4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A19D911A0874661D1F3F0211 /* Pods-Enchant.debug.xcconfig */,
+				57E0E0E86DECBEEF23494BD9 /* Pods-Enchant.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FE1126326990901688FDB3BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				260E0107C673263FE8B9FAAE /* Pods_Enchant.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -105,9 +132,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 986F34521E35CD8A001BB184 /* Build configuration list for PBXNativeTarget "Enchant" */;
 			buildPhases = (
+				07EAC0DC3580353D7A55D94B /* [CP] Check Pods Manifest.lock */,
 				986F343C1E35CD89001BB184 /* Sources */,
 				986F343D1E35CD89001BB184 /* Frameworks */,
 				986F343E1E35CD89001BB184 /* Resources */,
+				B587E21149DC7C22DC1F83FE /* [CP] Embed Pods Frameworks */,
+				55327DD704C6CE6682CF3D9D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -166,6 +196,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		07EAC0DC3580353D7A55D94B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		55327DD704C6CE6682CF3D9D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Enchant/Pods-Enchant-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B587E21149DC7C22DC1F83FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Enchant/Pods-Enchant-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		986F343C1E35CD89001BB184 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -176,6 +254,7 @@
 				98D28E2A1E36C7DC00584CB1 /* AppNotification.swift in Sources */,
 				98D28E2D1E372EE200584CB1 /* PlayerView.swift in Sources */,
 				98D28E291E36C7DC00584CB1 /* SegueIdentifier.swift in Sources */,
+				98EFAFB41E3878C200629289 /* Ultility.swift in Sources */,
 				986F34441E35CD8A001BB184 /* AppDelegate.swift in Sources */,
 				98D28E2B1E36C7DC00584CB1 /* App.swift in Sources */,
 				98D28E281E36C7DC00584CB1 /* StorybordIdentifier.swift in Sources */,
@@ -297,6 +376,7 @@
 		};
 		986F34531E35CD8A001BB184 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A19D911A0874661D1F3F0211 /* Pods-Enchant.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2ATYTS9SNC;
@@ -310,6 +390,7 @@
 		};
 		986F34541E35CD8A001BB184 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57E0E0E86DECBEEF23494BD9 /* Pods-Enchant.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2ATYTS9SNC;

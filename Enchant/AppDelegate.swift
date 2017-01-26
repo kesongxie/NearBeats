@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        Parse.initialize(
+            with: ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
+                configuration.applicationId = "enchant-20CA539A-8A51-47BE-9296-BC3AFEA7698E"
+                configuration.clientKey = nil  // set to nil assuming you have not set clientKey
+                configuration.server = "http://parseserver-bjxgv-env.us-east-1.elasticbeanstalk.com/parse"
+            })
+        )
         return true
     }
 
