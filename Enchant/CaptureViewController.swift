@@ -14,6 +14,7 @@ import Parse
 fileprivate let captureBtnActiveColor = UIColor(red: 199 / 255.0, green: 10 / 255.0, blue: 10 / 255.0, alpha: 1.0)
 fileprivate let captureBtnDeActiveColor = UIColor.white
 fileprivate let obeserverKeyPath = "status"
+fileprivate let maximumVideoTimeInterval = 10.0
 
 class CaptureViewController: UIViewController {
 
@@ -70,7 +71,7 @@ class CaptureViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addSessionWithCameraPosition(position: .front)
+        self.addSessionWithCameraPosition(position: .back)
         NotificationCenter.default.addObserver(self, selector: #selector(appWillEnterForeground(_:)), name: AppNotification.AppWillEnterForegroundNotificationName, object: App.delegate)
     }
     
@@ -166,7 +167,8 @@ class CaptureViewController: UIViewController {
         /* set up animation */
         animation.fromValue = 0.0
         //        animation.toValue = 1.0
-        animation.duration = 15.0
+        animation.duration = maximumVideoTimeInterval
+        animation.delegate = self
         self.shapeLayer?.add(animation, forKey: "drawLineAnimation")
         self.view.layer.addSublayer(self.shapeLayer!)
     }
@@ -194,23 +196,23 @@ class CaptureViewController: UIViewController {
         
         
         
-        let post = PFObject(className: "Post")
-        post["description"] = "hello world"
-        do{
-            let data = try Data(contentsOf: url)
-            post["media"] = PFFile(data: data)
-            post.saveInBackground { (success, error) in
-                if success{
-                    print("video saved")
-                }else{
-                    print("over here")
-                    print(error?.localizedDescription)
-                }
-            }
-        }catch let error as NSError{
-            print("here")
-            print(error.localizedDescription)
-        }
+//        let post = PFObject(className: "Post")
+//        post["description"] = "hello world"
+//        do{
+//            let data = try Data(contentsOf: url)
+//            post["media"] = PFFile(data: data)
+//            post.saveInBackground { (success, error) in
+//                if success{
+//                    print("video saved")
+//                }else{
+//                    if error != nil{
+//                        print(error!.localizedDescription)
+//                    }
+//                }
+//            }
+//        }catch let error as NSError{
+//            print(error.localizedDescription)
+//        }
         
         
         
@@ -257,16 +259,20 @@ class CaptureViewController: UIViewController {
 }
 
 extension CaptureViewController: AVCaptureFileOutputRecordingDelegate{
+    func capture(_ captureOutput: AVCaptureFileOutput!, didStartRecordingToOutputFileAt fileURL: URL!, fromConnections connections: [Any]!) {
+    }
+
     func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
         if error == nil{
             self.playVideoAfterFinishedRecording(withVideoURL: outputFileURL)
-            print("stop recording")
         }else{
            print(error.localizedDescription)
         }
     }
-    
-    func capture(_ captureOutput: AVCaptureFileOutput!, didStartRecordingToOutputFileAt fileURL: URL!, fromConnections connections: [Any]!) {
-        print("start recording")
+}
+
+extension CaptureViewController: CAAnimationDelegate{
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        self.stopRecording()
     }
 }
