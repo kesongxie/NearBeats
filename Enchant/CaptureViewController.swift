@@ -13,7 +13,6 @@ import Parse
 
 fileprivate let captureBtnActiveColor = UIColor(red: 199 / 255.0, green: 10 / 255.0, blue: 10 / 255.0, alpha: 1.0)
 fileprivate let captureBtnDeActiveColor = UIColor.white
-fileprivate let obeserverKeyPath = "status"
 fileprivate let maximumVideoTimeInterval = 10.0
 
 class CaptureViewController: UIViewController {
@@ -188,35 +187,34 @@ class CaptureViewController: UIViewController {
         let asset = AVAsset(url: url)
         let assetsKey = ["playable"]
         self.playerItem =  AVPlayerItem(asset: asset, automaticallyLoadedAssetKeys: assetsKey)
-        self.playerItem?.addObserver(self, forKeyPath: obeserverKeyPath, options: .new, context: self.playerItemContext)
+        self.playerItem?.addObserver(self, forKeyPath: #keyPath(AVPlayerItem.status), options: .new, context: self.playerItemContext)
         self.player = AVPlayer(playerItem: self.playerItem)
         self.playerView?.player = self.player;
         self.playerView.playerLayer.videoGravity =  AVLayerVideoGravityResizeAspectFill
         NotificationCenter.default.addObserver(self, selector: #selector(didPlayToEnd(_:)), name: AppNotification.AVPlayerItemDidPlayToEndTimeNotificationName, object: nil)
         
         
-        
-//        let post = PFObject(className: "Post")
-//        post["description"] = "hello world"
-//        do{
-//            let data = try Data(contentsOf: url)
-//            post["media"] = PFFile(data: data)
-//            post.saveInBackground { (success, error) in
-//                if success{
-//                    print("video saved")
-//                }else{
-//                    if error != nil{
-//                        print(error!.localizedDescription)
-//                    }
-//                }
-//            }
-//        }catch let error as NSError{
-//            print(error.localizedDescription)
-//        }
-        
+        let post = PFObject(className: "Post")
+        post["description"] = "hello world"
+        do{
+            let data = try Data(contentsOf: url)
+            post["media"] = PFFile(data: data)
+            post.saveInBackground { (success, error) in
+                if success{
+                    print("video saved")
+                }else{
+                    if error != nil{
+                        print(error!.localizedDescription)
+                    }
+                }
+            }
+        }catch let error as NSError{
+            print(error.localizedDescription)
+        }
         
         
         
+//        
 //        let fileManager = FileManager()
 //        do{
 //            try fileManager.removeItem(at: url)
@@ -251,7 +249,7 @@ class CaptureViewController: UIViewController {
     }
     
     func resetPlayer(){
-        self.playerItem?.removeObserver(self, forKeyPath: obeserverKeyPath, context: self.playerItemContext)
+        self.playerItem?.removeObserver(self, forKeyPath:  #keyPath(AVPlayerItem.status), context: self.playerItemContext)
         self.playerItemContext = nil
         self.player?.pause()
     }

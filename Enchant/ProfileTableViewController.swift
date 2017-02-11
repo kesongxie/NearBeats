@@ -9,6 +9,10 @@
 import UIKit
 
 fileprivate let cheifSpecialReuseCell = "ChiefSpecialCell"
+fileprivate let guestMomentReuseCell = "GuestMomentCell"
+fileprivate let GuestMomentCollectionCellReuseIden = "GuestMomentCollectionCell"
+fileprivate let CheifSpecialCollectionCellReuseIden = "CheifSpecialCollectionCell"
+
 
 class ProfileTableViewController: UITableViewController {
 
@@ -19,8 +23,26 @@ class ProfileTableViewController: UITableViewController {
     @IBOutlet weak var backgroundContainerViewTopSpace: NSLayoutConstraint!
     @IBOutlet weak var backgroundViewHeightConstraint: NSLayoutConstraint!
     
+    //cheif special collection view
+    @IBOutlet weak var cheifSpecialCollectionView: UICollectionView!{
+        didSet{
+            self.cheifSpecialCollectionView.delegate = self
+            self.cheifSpecialCollectionView.dataSource = self
+        }
+    }
+    @IBOutlet weak var chiefSpecialCollectionViewHeightConstraint: NSLayoutConstraint!
+    
+    //guest moment collection view
+    @IBOutlet weak var guestMomentCollectionView: UICollectionView!{
+        didSet{
+            self.guestMomentCollectionView.delegate = self
+            self.guestMomentCollectionView.dataSource = self
+        }
+    }
+    @IBOutlet weak var guestMomentCollectionViewHeightConstraint: NSLayoutConstraint!
+    
     var backgroundImageViewOriginHeight: CGFloat = 0
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.estimatedRowHeight = self.tableView.rowHeight
@@ -30,7 +52,7 @@ class ProfileTableViewController: UITableViewController {
         UIView.animate(withDuration: 1.0, delay: 0, options: .curveEaseInOut, animations: {
             self.headerView.transform = .identity
         }, completion: nil)
-
+        
     }
     
 
@@ -39,10 +61,21 @@ class ProfileTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.headerView.frame.size = UIScreen.main.bounds.size
-        self.backgroundImageViewOriginHeight = self.headerView.frame.size.height
+    
+    override func viewDidAppear(_ animated: Bool){
+        super.viewDidAppear(animated)
+        self.backgroundImageViewOriginHeight = UIScreen.main.bounds.size.height
+        self.backgroundViewHeightConstraint.constant = self.backgroundImageViewOriginHeight
+        self.tableView.setNeedsLayout()
+        self.tableView.layoutIfNeeded()
+        self.headerView.frame.size = self.headerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        self.headerView.frame.size.width = UIScreen.main.bounds.size.width
+        print( self.headerView.frame.size)
+        print(self.tableView.contentSize)
+        
+        self.tableView.contentSize = CGSize(width: 320, height: 1600)
+
+
     }
     
     override var prefersStatusBarHidden: Bool{
@@ -52,10 +85,11 @@ class ProfileTableViewController: UITableViewController {
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y < 0{
             self.backgroundContainerViewTopSpace.constant = scrollView.contentOffset.y
-            self.headerView.frame.size.height =  self.backgroundImageViewOriginHeight - scrollView.contentOffset.y
+            self.backgroundViewHeightConstraint.constant =  self.backgroundImageViewOriginHeight - scrollView.contentOffset.y
         }else{
-            self.overlayView.alpha = min(0.2 + scrollView.contentOffset.y / 2000, 0.4)
+          //  self.overlayView.alpha = min(0.2 + scrollView.contentOffset.y / 2000, 0.4)
         }
+
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -67,14 +101,65 @@ class ProfileTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cheifSpecialReuseCell, for: indexPath) as! CheifSpecialTableViewCell
-        cell.setNeedsLayout()
-        cell.layoutIfNeeded()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         return cell
     }
     
+}
+
+
+
+//chief special cell
+extension ProfileTableViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+        
+    }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        switch collectionView{
+        case self.cheifSpecialCollectionView:
+            return 6
+        case self.guestMomentCollectionView:
+            return 3
+        default:
+            return 0
+        
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:CheifSpecialCollectionCellReuseIden, for: indexPath) as! CheifSpecialCollectionViewCell
+        cell.layer.cornerRadius = 6.0
+        cell.clipsToBounds = true
+        return cell
+    }
     
 }
+
+extension ProfileTableViewController: UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        switch collectionView{
+        case self.cheifSpecialCollectionView:
+            self.chiefSpecialCollectionViewHeightConstraint.constant = 130
+            return CGSize(width: 130, height: 130)
+        case self.guestMomentCollectionView:
+            self.guestMomentCollectionViewHeightConstraint.constant = 207
+            return CGSize(width: 207, height: 207)
+        default:
+            return CGSize(width: 0, height: 0)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 12.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+    }
+}
+
+
 
 

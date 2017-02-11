@@ -1,5 +1,5 @@
 //
-//  CheifSpecialTableViewCell.swift
+//  GuestMomentTableViewCell.swift
 //  Enchant
 //
 //  Created by Xie kesong on 1/30/17.
@@ -8,22 +8,20 @@
 
 import UIKit
 
+fileprivate let GuestMomentCollectionCellReuseIden = "GuestMomentCollectionCell"
 
-class CheifSpecialTableViewCell: UITableViewCell {
-
-
+class GuestMomentTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }
-
 
