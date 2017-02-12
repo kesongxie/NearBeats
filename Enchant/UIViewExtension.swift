@@ -14,9 +14,10 @@ extension UIView{
         self.clipsToBounds = true
     }
     
-    func animateBounceView(){
+    
+    func animateBounceView(withDuration duration: TimeInterval = 0.5, delay: TimeInterval = 0, usingSpringWithDamping dampingRatio: CGFloat = 0.2, initialSpringVelocity velocity: CGFloat = 6.0, options: UIViewAnimationOptions = .allowUserInteraction){
         self.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 6.0, options: .allowUserInteraction, animations: {
+        UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: dampingRatio, initialSpringVelocity: velocity, options: options, animations: {
             self.transform = .identity
         }, completion: nil)
     }

@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		71C3889F505F37A0F82A483F /* Pods_Enchant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 260E0107C673263FE8B9FAAE /* Pods_Enchant.framework */; };
-		98215B1D1E3FF28000DDED93 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98215B1C1E3FF28000DDED93 /* ProfileTableViewController.swift */; };
-		98215B1F1E405B8300DDED93 /* CheifSpecialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98215B1E1E405B8300DDED93 /* CheifSpecialTableViewCell.swift */; };
 		98215B221E405D1700DDED93 /* CheifSpecialCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98215B211E405D1700DDED93 /* CheifSpecialCollectionViewCell.swift */; };
 		986F34441E35CD8A001BB184 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986F34431E35CD8A001BB184 /* AppDelegate.swift */; };
 		986F34461E35CD8A001BB184 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986F34451E35CD8A001BB184 /* CaptureViewController.swift */; };
 		986F34491E35CD8A001BB184 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 986F34471E35CD8A001BB184 /* Main.storyboard */; };
 		986F344B1E35CD8A001BB184 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 986F344A1E35CD8A001BB184 /* Assets.xcassets */; };
 		986F344E1E35CD8A001BB184 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 986F344C1E35CD8A001BB184 /* LaunchScreen.storyboard */; };
+		988B1C321E4FDEDF00843626 /* Moment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988B1C311E4FDEDF00843626 /* Moment.swift */; };
+		988B1C351E50D5F700843626 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988B1C341E50D5F700843626 /* Style.swift */; };
 		989C14FC1E4ED6C900560464 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989C14FB1E4ED6C900560464 /* UITableViewExtension.swift */; };
 		98AD80301E4E7544005D152F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AD802F1E4E7544005D152F /* ProfileViewController.swift */; };
 		98D28E281E36C7DC00584CB1 /* StorybordIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D28E241E36C7DC00584CB1 /* StorybordIdentifier.swift */; };
@@ -24,7 +24,6 @@
 		98D28E2B1E36C7DC00584CB1 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D28E271E36C7DC00584CB1 /* App.swift */; };
 		98D28E2D1E372EE200584CB1 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D28E2C1E372EE200584CB1 /* PlayerView.swift */; };
 		98D5ABF81E36B12400FB2B07 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D5ABF71E36B12400FB2B07 /* UIViewExtension.swift */; };
-		98DC55031E432D6B00DDBBDE /* GuestMomentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DC55021E432D6B00DDBBDE /* GuestMomentTableViewCell.swift */; };
 		98DC55061E432DD100DDBBDE /* GuestMomentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DC55051E432DD100DDBBDE /* GuestMomentCollectionViewCell.swift */; };
 		98EFAFB41E3878C200629289 /* Ultility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFAFB31E3878C200629289 /* Ultility.swift */; };
 /* End PBXBuildFile section */
@@ -32,8 +31,6 @@
 /* Begin PBXFileReference section */
 		260E0107C673263FE8B9FAAE /* Pods_Enchant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Enchant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57E0E0E86DECBEEF23494BD9 /* Pods-Enchant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Enchant.release.xcconfig"; path = "Pods/Target Support Files/Pods-Enchant/Pods-Enchant.release.xcconfig"; sourceTree = "<group>"; };
-		98215B1C1E3FF28000DDED93 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
-		98215B1E1E405B8300DDED93 /* CheifSpecialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheifSpecialTableViewCell.swift; sourceTree = "<group>"; };
 		98215B211E405D1700DDED93 /* CheifSpecialCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheifSpecialCollectionViewCell.swift; sourceTree = "<group>"; };
 		986F34401E35CD8A001BB184 /* Enchant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Enchant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		986F34431E35CD8A001BB184 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +39,8 @@
 		986F344A1E35CD8A001BB184 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		986F344D1E35CD8A001BB184 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		986F344F1E35CD8A001BB184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		988B1C311E4FDEDF00843626 /* Moment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moment.swift; sourceTree = "<group>"; };
+		988B1C341E50D5F700843626 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		989C14FB1E4ED6C900560464 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		98AD802F1E4E7544005D152F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		98D28E241E36C7DC00584CB1 /* StorybordIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorybordIdentifier.swift; sourceTree = "<group>"; };
@@ -50,7 +49,6 @@
 		98D28E271E36C7DC00584CB1 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		98D28E2C1E372EE200584CB1 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		98D5ABF71E36B12400FB2B07 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		98DC55021E432D6B00DDBBDE /* GuestMomentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestMomentTableViewCell.swift; sourceTree = "<group>"; };
 		98DC55051E432DD100DDBBDE /* GuestMomentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestMomentCollectionViewCell.swift; sourceTree = "<group>"; };
 		98EFAFB31E3878C200629289 /* Ultility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ultility.swift; sourceTree = "<group>"; };
 		A19D911A0874661D1F3F0211 /* Pods-Enchant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Enchant.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Enchant/Pods-Enchant.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,12 +97,12 @@
 			children = (
 				986F34431E35CD8A001BB184 /* AppDelegate.swift */,
 				98D28E2C1E372EE200584CB1 /* PlayerView.swift */,
+				988B1C331E4FDEE200843626 /* Model */,
 				98D28E231E36C7D200584CB1 /* Macro */,
 				98D5ABF61E36B10D00FB2B07 /* Extension */,
 				98215B201E405BA500DDED93 /* Capture */,
 				98DC55001E432CC300DDBBDE /* Cheif Special Cell */,
 				98DC55011E432D2900DDBBDE /* Guest Moment Cell */,
-				98215B1C1E3FF28000DDED93 /* ProfileTableViewController.swift */,
 				98AD802F1E4E7544005D152F /* ProfileViewController.swift */,
 				986F34471E35CD8A001BB184 /* Main.storyboard */,
 				986F344A1E35CD8A001BB184 /* Assets.xcassets */,
@@ -112,6 +110,14 @@
 				986F344F1E35CD8A001BB184 /* Info.plist */,
 			);
 			path = Enchant;
+			sourceTree = "<group>";
+		};
+		988B1C331E4FDEE200843626 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				988B1C311E4FDEDF00843626 /* Moment.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		98D28E231E36C7D200584CB1 /* Macro */ = {
@@ -122,6 +128,7 @@
 				98D28E261E36C7DC00584CB1 /* AppNotification.swift */,
 				98EFAFB31E3878C200629289 /* Ultility.swift */,
 				98D28E271E36C7DC00584CB1 /* App.swift */,
+				988B1C341E50D5F700843626 /* Style.swift */,
 			);
 			name = Macro;
 			sourceTree = "<group>";
@@ -139,7 +146,6 @@
 			isa = PBXGroup;
 			children = (
 				98215B211E405D1700DDED93 /* CheifSpecialCollectionViewCell.swift */,
-				98215B1E1E405B8300DDED93 /* CheifSpecialTableViewCell.swift */,
 			);
 			name = "Cheif Special Cell";
 			sourceTree = "<group>";
@@ -147,7 +153,6 @@
 		98DC55011E432D2900DDBBDE /* Guest Moment Cell */ = {
 			isa = PBXGroup;
 			children = (
-				98DC55021E432D6B00DDBBDE /* GuestMomentTableViewCell.swift */,
 				98DC55051E432DD100DDBBDE /* GuestMomentCollectionViewCell.swift */,
 			);
 			name = "Guest Moment Cell";
@@ -295,17 +300,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				986F34461E35CD8A001BB184 /* CaptureViewController.swift in Sources */,
-				98215B1F1E405B8300DDED93 /* CheifSpecialTableViewCell.swift in Sources */,
 				98D5ABF81E36B12400FB2B07 /* UIViewExtension.swift in Sources */,
 				989C14FC1E4ED6C900560464 /* UITableViewExtension.swift in Sources */,
-				98215B1D1E3FF28000DDED93 /* ProfileTableViewController.swift in Sources */,
 				98D28E2A1E36C7DC00584CB1 /* AppNotification.swift in Sources */,
+				988B1C351E50D5F700843626 /* Style.swift in Sources */,
 				98D28E2D1E372EE200584CB1 /* PlayerView.swift in Sources */,
-				98DC55031E432D6B00DDBBDE /* GuestMomentTableViewCell.swift in Sources */,
 				98215B221E405D1700DDED93 /* CheifSpecialCollectionViewCell.swift in Sources */,
 				98D28E291E36C7DC00584CB1 /* SegueIdentifier.swift in Sources */,
 				98EFAFB41E3878C200629289 /* Ultility.swift in Sources */,
 				986F34441E35CD8A001BB184 /* AppDelegate.swift in Sources */,
+				988B1C321E4FDEDF00843626 /* Moment.swift in Sources */,
 				98D28E2B1E36C7DC00584CB1 /* App.swift in Sources */,
 				98AD80301E4E7544005D152F /* ProfileViewController.swift in Sources */,
 				98D28E281E36C7DC00584CB1 /* StorybordIdentifier.swift in Sources */,
