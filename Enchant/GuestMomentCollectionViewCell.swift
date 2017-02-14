@@ -13,19 +13,19 @@ class GuestMomentCollectionViewCell: UICollectionViewCell {
     var moment: Moment!{
         didSet{
             if let mediaURL = self.moment.mediaURL{
-                self.thumbnailImageView.image = UIImage(named: mediaURL)
+//                self.thumbnailImageView.image = UIImage(named: mediaURL)
             }
-            if let title = self.moment.title{
-                self.titleLabel.text = title
-            }
+//            if let title = self.moment.title{
+//                self.titleLabel.text = title
+//            }
         }
     }
     
-    @IBOutlet weak var titleLabel: UILabel!
+//    @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var thumbnailImageView: UIImageView!{
         didSet{
-            self.thumbnailImageView.layer.cornerRadius = 4.0
+            self.thumbnailImageView.layer.cornerRadius = 45
             self.thumbnailImageView.clipsToBounds = true
             let overlay = CALayer()
             overlay.frame = thumbnailImageView.bounds

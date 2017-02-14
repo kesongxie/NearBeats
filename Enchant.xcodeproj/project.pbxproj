@@ -12,10 +12,10 @@
 		986F34441E35CD8A001BB184 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986F34431E35CD8A001BB184 /* AppDelegate.swift */; };
 		986F34461E35CD8A001BB184 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986F34451E35CD8A001BB184 /* CaptureViewController.swift */; };
 		986F34491E35CD8A001BB184 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 986F34471E35CD8A001BB184 /* Main.storyboard */; };
-		986F344B1E35CD8A001BB184 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 986F344A1E35CD8A001BB184 /* Assets.xcassets */; };
 		986F344E1E35CD8A001BB184 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 986F344C1E35CD8A001BB184 /* LaunchScreen.storyboard */; };
 		988B1C321E4FDEDF00843626 /* Moment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988B1C311E4FDEDF00843626 /* Moment.swift */; };
 		988B1C351E50D5F700843626 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988B1C341E50D5F700843626 /* Style.swift */; };
+		988B1C371E513FE900843626 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 988B1C361E513FE900843626 /* Assets.xcassets */; };
 		989C14FC1E4ED6C900560464 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989C14FB1E4ED6C900560464 /* UITableViewExtension.swift */; };
 		98AD80301E4E7544005D152F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AD802F1E4E7544005D152F /* ProfileViewController.swift */; };
 		98D28E281E36C7DC00584CB1 /* StorybordIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D28E241E36C7DC00584CB1 /* StorybordIdentifier.swift */; };
@@ -36,11 +36,11 @@
 		986F34431E35CD8A001BB184 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		986F34451E35CD8A001BB184 /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 		986F34481E35CD8A001BB184 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		986F344A1E35CD8A001BB184 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		986F344D1E35CD8A001BB184 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		986F344F1E35CD8A001BB184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		988B1C311E4FDEDF00843626 /* Moment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moment.swift; sourceTree = "<group>"; };
 		988B1C341E50D5F700843626 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		988B1C361E513FE900843626 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Enchant/Assets.xcassets; sourceTree = "<group>"; };
 		989C14FB1E4ED6C900560464 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		98AD802F1E4E7544005D152F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		98D28E241E36C7DC00584CB1 /* StorybordIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorybordIdentifier.swift; sourceTree = "<group>"; };
@@ -78,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				986F34421E35CD8A001BB184 /* Enchant */,
+				988B1C361E513FE900843626 /* Assets.xcassets */,
 				986F34411E35CD8A001BB184 /* Products */,
 				E76671FD8F8960BA1752FFA4 /* Pods */,
 				FE1126326990901688FDB3BC /* Frameworks */,
@@ -105,7 +106,6 @@
 				98DC55011E432D2900DDBBDE /* Guest Moment Cell */,
 				98AD802F1E4E7544005D152F /* ProfileViewController.swift */,
 				986F34471E35CD8A001BB184 /* Main.storyboard */,
-				986F344A1E35CD8A001BB184 /* Assets.xcassets */,
 				986F344C1E35CD8A001BB184 /* LaunchScreen.storyboard */,
 				986F344F1E35CD8A001BB184 /* Info.plist */,
 			);
@@ -239,7 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				986F344E1E35CD8A001BB184 /* LaunchScreen.storyboard in Resources */,
-				986F344B1E35CD8A001BB184 /* Assets.xcassets in Resources */,
+				988B1C371E513FE900843626 /* Assets.xcassets in Resources */,
 				986F34491E35CD8A001BB184 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

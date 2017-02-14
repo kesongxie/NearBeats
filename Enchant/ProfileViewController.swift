@@ -27,6 +27,7 @@ class ProfileViewController: UIViewController {
             self.tableView.contentInset = UIEdgeInsets(top: headerOriginHeight, left: 0, bottom: 0, right: 0)
             self.tableView.contentOffset.y = -self.tableView.contentInset.top
             self.tableView.backgroundColor = UIColor.clear
+            self.tableView.indicatorStyle = .white
         }
     }
     @IBOutlet weak var tableHeaderView: UIView!
@@ -60,7 +61,7 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var statusBtn: UIButton!{
         didSet{
-            self.statusBtn.layer.cornerRadius = 6.0
+            self.statusBtn.layer.cornerRadius = 4.0
             self.statusBtn.clipsToBounds = true
         }
     }
@@ -88,6 +89,8 @@ class ProfileViewController: UIViewController {
     //status bar control
     var statusBarStyle: UIStatusBarStyle = .lightContent
     
+    private var isViewAppeared = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.animateZoomHeader()
@@ -105,7 +108,10 @@ class ProfileViewController: UIViewController {
         self.headerHeightConstraint.constant = UIScreen.main.bounds.size.height
         self.headerOriginHeight = self.headerHeightConstraint.constant
         self.tableView.setAndLayoutTableHeaderView(header: self.tableHeaderView)
+        self.isViewAppeared = true
+
     }
+    
     
         
     override func didReceiveMemoryWarning() {
@@ -138,29 +144,34 @@ class ProfileViewController: UIViewController {
 
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView == self.tableView{
-            //adjust heaer when scrollView is global self.tableView
-            let adjustOffset = scrollView.contentOffset.y + headerOriginHeight
-            if adjustOffset <= 0{
-                self.headerViewTopConstraint.constant = 0
-                self.headerHeightConstraint.constant = -scrollView.contentOffset.y
-            }else{
-                self.headerViewTopConstraint.constant = -adjustOffset * 0.6 //create a parallax effect for the header
-                var shouldSetStatusBarStyleDefault = false
-                let diff = adjustOffset + self.navigationBarView.frame.size.height - UIScreen.main.bounds.size.height;
-                if diff > 0{
-                    self.navigationBarView.alpha = min(1, diff * 0.04)
-                    if self.navigationBarView.alpha > 0.2{
-                        self.statusBarStyle = .default
-                        shouldSetStatusBarStyleDefault = true
-                    }
+        if self.isViewAppeared{
+            if scrollView == self.tableView{
+                //adjust heaer when scrollView is global self.tableView
+                let adjustOffset = scrollView.contentOffset.y + headerOriginHeight
+                 if adjustOffset <= 0{
+                    self.headerViewTopConstraint.constant = 0
+                    self.headerHeightConstraint.constant = -scrollView.contentOffset.y
                 }else{
-                    self.navigationBarView.alpha = 0
+                    self.headerViewTopConstraint.constant = -adjustOffset * 0.6 //create a parallax effect for the header
+                    var shouldSetStatusBarStyleDefault = false
+                    let diff = adjustOffset + self.navigationBarView.frame.size.height - UIScreen.main.bounds.size.height;
+                    if diff > 0{
+                        
+                        self.navigationBarView.alpha = min(1, diff * 0.04)
+                        if self.navigationBarView.alpha > 0.2{
+                            self.statusBarStyle = .default
+                            shouldSetStatusBarStyleDefault = true
+                            self.tableView.indicatorStyle = .black
+                        }
+                    }else{
+                        self.navigationBarView.alpha = 0
+                        self.tableView.indicatorStyle = .white
+                    }
+                    if !shouldSetStatusBarStyleDefault{
+                        self.statusBarStyle = .lightContent
+                    }
+                    self.setNeedsStatusBarAppearanceUpdate()
                 }
-                if !shouldSetStatusBarStyleDefault{
-                    self.statusBarStyle = .lightContent
-                }
-                self.setNeedsStatusBarAppearanceUpdate()
             }
         }
     }
@@ -208,12 +219,12 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
 //18 : 14
 extension ProfileViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-         self.guestMomentCollectionViewHeightConstraint.constant = 180
-         return CGSize(width: 180, height: 180)
+         self.guestMomentCollectionViewHeightConstraint.constant = 90
+         return CGSize(width: 230, height: 90)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 12.0
+        return 29.0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
