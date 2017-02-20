@@ -10,23 +10,26 @@ import UIKit
 
 class GuestMomentCollectionViewCell: UICollectionViewCell {
     
-    var moment: Moment!{
+    var post: Post!{
         didSet{
-            if let mediaURL = self.moment.mediaURL{
-//                self.thumbnailImageView.image = UIImage(named: mediaURL)
-            }
-//            if let title = self.moment.title{
+//            if let mediaURL = self.post.mediaURL{
+////                self.thumbnailImageView.image = UIImage(named: mediaURL)
+//            }
+//            if let title = self.post.caption{
 //                self.titleLabel.text = title
 //            }
         }
     }
     
-//    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var thumbnailImageView: UIImageView!{
         didSet{
-            self.thumbnailImageView.layer.cornerRadius = 45
+            self.thumbnailImageView.layer.cornerRadius = 45.0
             self.thumbnailImageView.clipsToBounds = true
+            self.thumbnailImageView.layer.borderColor = UIColor(red: 240 / 255.0, green: 240 / 255.0, blue: 240 / 255.0, alpha: 240 / 255.0).cgColor
+            self.thumbnailImageView.layer.borderWidth = 1.0
+            
             let overlay = CALayer()
             overlay.frame = thumbnailImageView.bounds
             overlay.backgroundColor = UIColor.black.cgColor

@@ -193,12 +193,13 @@ class CaptureViewController: UIViewController {
         self.playerView.playerLayer.videoGravity =  AVLayerVideoGravityResizeAspectFill
         NotificationCenter.default.addObserver(self, selector: #selector(didPlayToEnd(_:)), name: AppNotification.AVPlayerItemDidPlayToEndTimeNotificationName, object: nil)
         
-        
         let post = PFObject(className: "Post")
         post["description"] = "hello world"
         do{
             let data = try Data(contentsOf: url)
             post["media"] = PFFile(data: data)
+            
+            
             post.saveInBackground { (success, error) in
                 if success{
                     print("video saved")

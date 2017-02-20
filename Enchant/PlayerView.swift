@@ -9,7 +9,7 @@
 import AVFoundation
 import UIKit
 
-class PlayerView: UIView {
+class PlayerView: UIImageView {
     var player: AVPlayer? {
         get {
             return playerLayer.player

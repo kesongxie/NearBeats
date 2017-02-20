@@ -84,7 +84,7 @@ class ProfileViewController: UIViewController {
     
     
     //guest moment dataSource
-    var moment: [Moment]?
+    var post: [Post]?
     
     //status bar control
     var statusBarStyle: UIStatusBarStyle = .lightContent
@@ -137,9 +137,9 @@ class ProfileViewController: UIViewController {
     }
     
     private func guestMomentInit(){
-        let moment_1 = Moment(momentDict: ["media": "moment-1", "title": "Celebrating Jon's 21st at Bistro"])
-        let moment_2 = Moment(momentDict: ["media": "moment-2", "title": "Enjoying green tea ice crema after final"])
-        self.moment = [moment_2, moment_1]
+//        let moment_1 = Post(momentDict: ["media": "moment-1", "title": "Celebrating Jon's 21st at Bistro"])
+//        let moment_2 = Moment(momentDict: ["media": "moment-2", "title": "Enjoying green tea ice crema after final"])
+//        self.moment = [moment_2, moment_1]
     }
 
     
@@ -148,6 +148,9 @@ class ProfileViewController: UIViewController {
             if scrollView == self.tableView{
                 //adjust heaer when scrollView is global self.tableView
                 let adjustOffset = scrollView.contentOffset.y + headerOriginHeight
+                
+                
+                
                  if adjustOffset <= 0{
                     self.headerViewTopConstraint.constant = 0
                     self.headerHeightConstraint.constant = -scrollView.contentOffset.y
@@ -161,12 +164,20 @@ class ProfileViewController: UIViewController {
                         if self.navigationBarView.alpha > 0.2{
                             self.statusBarStyle = .default
                             shouldSetStatusBarStyleDefault = true
-                            self.tableView.indicatorStyle = .black
                         }
                     }else{
                         self.navigationBarView.alpha = 0
-                        self.tableView.indicatorStyle = .white
                     }
+                    
+                    let headerRect = self.tableHeaderView.convert(self.tableHeaderView.frame, from: nil)
+                    //adjust the scroll bar style
+                    if (-headerRect.origin.y) >= adjustOffset{
+                        self.tableView.indicatorStyle = .white
+                    }else{
+                        self.tableView.indicatorStyle = .black
+                    }
+                    
+                    //adjust the status bar style
                     if !shouldSetStatusBarStyleDefault{
                         self.statusBarStyle = .lightContent
                     }
@@ -184,7 +195,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -203,12 +214,12 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.moment?.count ?? 0
+        return self.post?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:GuestMomentCollectionCellReuseIden, for: indexPath) as! GuestMomentCollectionViewCell
-        cell.moment = self.moment![indexPath.row]
+        cell.post = self.post![indexPath.row]
         return cell
     }
     
