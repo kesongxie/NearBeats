@@ -36,11 +36,7 @@ class PostTableViewCell: UITableViewCell {
     //player item
     @IBOutlet weak var mediaPlayerView: PlayerView!{
         didSet{
-//            let overlay = CALayer()
-//            overlay.frame = mediaPlayerView.bounds
-//            overlay.backgroundColor = UIColor.black.cgColor
-//            overlay.opacity = 0.2
-//            self.mediaPlayerView.layer.addSublayer(overlay)
+            self.mediaPlayerView.layer.cornerRadius = 4.0
         }
     }
     var playerItem: AVPlayerItem?
@@ -51,10 +47,10 @@ class PostTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+   
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
@@ -62,7 +58,7 @@ class PostTableViewCell: UITableViewCell {
         if let fileURL = self.post.video?.videoURL{
             let asset = AVURLAsset(url: fileURL)
             let assetsKey = ["playable"]
-            self.playerItem =  AVPlayerItem(asset: asset, automaticallyLoadedAssetKeys: assetsKey)
+            self.playerItem = AVPlayerItem(asset: asset, automaticallyLoadedAssetKeys: assetsKey)
             self.playerItem?.addObserver(self, forKeyPath: #keyPath(AVPlayerItem.status), options: .new, context: self.playerItemContext)
             self.player = AVPlayer(playerItem: self.playerItem)
             self.mediaPlayerView?.player = self.player;

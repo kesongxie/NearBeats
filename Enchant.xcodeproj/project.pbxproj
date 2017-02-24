@@ -13,6 +13,7 @@
 		986C04F01E5970740086F379 /* Media in Resources */ = {isa = PBXBuildFile; fileRef = 986C04EF1E5970740086F379 /* Media */; };
 		986C04F31E5980470086F379 /* ParseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986C04F21E5980470086F379 /* ParseApp.swift */; };
 		986C04F51E598E7E0086F379 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986C04F41E598E7E0086F379 /* Video.swift */; };
+		986C04F71E5AD8C00086F379 /* MediaPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986C04F61E5AD8C00086F379 /* MediaPlayer.swift */; };
 		986F34441E35CD8A001BB184 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986F34431E35CD8A001BB184 /* AppDelegate.swift */; };
 		986F34461E35CD8A001BB184 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986F34451E35CD8A001BB184 /* CaptureViewController.swift */; };
 		986F34491E35CD8A001BB184 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 986F34471E35CD8A001BB184 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		986C04EF1E5970740086F379 /* Media */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Media; sourceTree = "<group>"; };
 		986C04F21E5980470086F379 /* ParseApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseApp.swift; sourceTree = "<group>"; };
 		986C04F41E598E7E0086F379 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		986C04F61E5AD8C00086F379 /* MediaPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaPlayer.swift; sourceTree = "<group>"; };
 		986F34401E35CD8A001BB184 /* Enchant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Enchant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		986F34431E35CD8A001BB184 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		986F34451E35CD8A001BB184 /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				988B1C311E4FDEDF00843626 /* Post.swift */,
+				986C04F61E5AD8C00086F379 /* MediaPlayer.swift */,
 				986C04F41E598E7E0086F379 /* Video.swift */,
 			);
 			name = Model;
@@ -360,6 +363,7 @@
 				98D28E2B1E36C7DC00584CB1 /* App.swift in Sources */,
 				98AD80301E4E7544005D152F /* ProfileViewController.swift in Sources */,
 				98D28E281E36C7DC00584CB1 /* StorybordIdentifier.swift in Sources */,
+				986C04F71E5AD8C00086F379 /* MediaPlayer.swift in Sources */,
 				986C04F51E598E7E0086F379 /* Video.swift in Sources */,
 				98DC55061E432DD100DDBBDE /* GuestMomentCollectionViewCell.swift in Sources */,
 			);

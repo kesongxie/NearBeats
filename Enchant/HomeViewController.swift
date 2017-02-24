@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        saveVideo()
+       // saveVideo()
         ParseApp.fetchPost { (posts, error) in
             if let posts = posts{
                 self.posts = posts
@@ -45,16 +45,15 @@ class HomeViewController: UIViewController {
 
     func saveVideo(){
         let bundle = Bundle.main
-        if let path = bundle.path(forResource: "full", ofType: "mp4", inDirectory: "Media"){
+        if let path = bundle.path(forResource: "root", ofType: "mp4", inDirectory: "Media"){
             let url = URL(fileURLWithPath: path)
             self.playVideoAfterFinishedRecording(withVideoURL: url)
         }
     }
     
-    
     func playVideoAfterFinishedRecording(withVideoURL url: URL){
         let post = PFObject(className: "Post")
-        post["caption"] = "Out of the game for 6 months, but back with vengeance. Meet your 2017 AO Men's champion"
+        post["caption"] = "It's a new year and we're back to work on the new look for the #usopen. The new Grandstand is taking shape! "
         do{
             let data = try Data(contentsOf: url)
             post["media"] = PFFile(data: data, contentType: "video/mp4")
@@ -74,7 +73,6 @@ class HomeViewController: UIViewController {
                 }
             }
         }catch let error as NSError{
-            print("can't read")
             print(error.localizedDescription)
         }
     }
@@ -100,4 +98,5 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         cell.post = posts![indexPath.row]
         return cell
     }
+    
 }
