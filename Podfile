@@ -1,4 +1,4 @@
 use_frameworks!
-target 'Enchant' do
+target 'NearBeats' do
 	pod 'Parse'
 end
