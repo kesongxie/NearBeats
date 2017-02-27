@@ -18,9 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
-                configuration.applicationId = "NearBeats-20CA539A-8A51-47BE-9296-BC3AFEA7698E"
+                configuration.applicationId = "nearbeats-20CA539A-8A51-47BE-9296-BC3AFEA7698E"
                 configuration.clientKey = nil  // set to nil assuming you have not set clientKey
-                configuration.server = "http://parseserver-bjxgv-env.us-east-1.elasticbeanstalk.com/parse"
+                configuration.server = "http://nearbeats-env.us-east-1.elasticbeanstalk.com/parse"
             })
         )
         return true
